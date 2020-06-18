@@ -78,7 +78,7 @@ void Game::Update() {
 	ticksLastFrame = SDL_GetTicks();
 
 	// TODO:
-	// Here we call the manager.update to update all entities as a function of deltaTime
+	// Here we call the manager.update to update all entities as a function of deltaTime,
 }
 
 void Game::Render() {
