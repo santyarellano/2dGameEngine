@@ -23,7 +23,7 @@ class TransformComponent: public Component {
 		}
 
 		void Initialize() override {
-
+			this->typeName = "TransformComponent";
 		}
 
 		void Update(float deltaTime) override {
@@ -39,7 +39,7 @@ class TransformComponent: public Component {
 				height
 			};
 			SDL_SetRenderDrawColor(Game::renderer, 255, 255, 255, 255);
-			SDL_RenderFillRect(Game::renderer& transformRectangle);
+			SDL_RenderFillRect(Game::renderer, &transformRectangle);
 		}
 };
 

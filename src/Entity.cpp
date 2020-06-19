@@ -1,4 +1,5 @@
 #include "./Entity.h"
+#include <string>
 
 Entity::Entity(EntityManager& manager): manager(manager) {
 	this->isActive = true;
@@ -26,4 +27,12 @@ void Entity::Destroy() {
 
 bool Entity::IsActive() const {
 	return this->isActive;
+}
+
+std::string Entity::toString() {
+	std::string s = "Entity Name: " + this->name + "\n";
+	for (int i=0, size=this->components.size(); i<size; i++) {
+		s += "	" + this->components[i]->typeName + "\n";
+	}
+	return s;
 }
