@@ -38,8 +38,12 @@ unsigned int EntityManager::GetEntityCount() {
 	return entities.size();
 }
 
-void EntityManager::ListAllEntities() {
-	for (int i=0, s=entities.size(); i<s; i++) {
-		std::cout << entities[i]->toString(); 
+void EntityManager::ListAllEntities() const {
+	unsigned int i = 0;
+	for (auto& entity: entities) {
+		std::cout << "Entity[" << i << "]: " << entity->name << std::endl;
+		entity->ListAllComponents();
+		i++;
 	}
+
 }

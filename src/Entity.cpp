@@ -1,4 +1,5 @@
 #include "./Entity.h"
+#include <iostream>
 #include <string>
 
 Entity::Entity(EntityManager& manager): manager(manager) {
@@ -29,7 +30,13 @@ bool Entity::IsActive() const {
 	return this->isActive;
 }
 
-std::string Entity::toString() {
+void Entity::ListAllComponents() const {
+	for (auto mapElement: componentTypeMap) {
+		std::cout << "	Component<" << mapElement.first->name() << ">" << std::endl;
+	}
+}
+
+std::string Entity::ToString() {
 	std::string s = "Entity Name: " + this->name + "\n";
 	for (int i=0, size=this->components.size(); i<size; i++) {
 		s += "	" + this->components[i]->typeName + "\n";

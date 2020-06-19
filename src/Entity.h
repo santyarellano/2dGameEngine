@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <typeinfo>
 #include "./EntityManager.h"
 #include "./Component.h"
 
@@ -25,7 +26,8 @@ class Entity {
 		void Render();
 		void Destroy();
 		bool IsActive() const;
-		std::string toString();
+		void ListAllComponents() const;
+		std::string ToString();
 
 		template <typename T, typename... TArgs>
 		T& AddComponent(TArgs&&... args) {
@@ -40,6 +42,16 @@ class Entity {
 		template <typename T>
 		T* GetComponent() {
 			return static_cast<T*>(componentTypeMap[&typeid(T)]);
+		}
+
+		template <typename T>
+		bool HasComponent() const {
+			for (auto mapElement: componentTypeMap) {
+				if (typeid(mapElement) == typeid(T)) {
+					return true;
+				}
+			}
+			return false;
 		}
 };
 
