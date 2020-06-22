@@ -48,25 +48,25 @@ class KeyboardControlComponent: public Component {
 			// Key down
 			if (Game::event.type == SDL_KEYDOWN) {
 				std::string keyCode = std::to_string(Game::event.key.keysym.sym);
-
+				int spd = 40;
 				if (keyCode.compare(upKey) == 0) {
-					transform->velocity.y = -10;
+					transform->velocity.y = -spd;
 					transform->velocity.x = 0;
 					sprite->Play("UpAnimation");
 				}
 				if (keyCode.compare(downKey) == 0) {
-					transform->velocity.y = 10;
+					transform->velocity.y = spd;
 					transform->velocity.x = 0;
 					sprite->Play("DownAnimation");
 				}
 				if (keyCode.compare(rightKey) == 0) {
 					transform->velocity.y = 0;
-					transform->velocity.x = 10;
+					transform->velocity.x = spd;
 					sprite->Play("RightAnimation");
 				}
 				if (keyCode.compare(leftKey) == 0) {
 					transform->velocity.y = 0;
-					transform->velocity.x = -10;
+					transform->velocity.x = -spd;
 					sprite->Play("LeftAnimation");
 				}
 				if (keyCode.compare(shootKey) == 0) {
