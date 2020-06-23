@@ -3,6 +3,7 @@
 
 #include "./Entity.h"
 #include "./Component.h"
+#include <string>
 #include <vector>
 
 class EntityManager {
@@ -18,6 +19,7 @@ class EntityManager {
 		std::vector<Entity*> GetEntitiesByLayer(LayerType layer) const;
 		unsigned int GetEntityCount();
 		void ListAllEntities() const;
+		std::string CheckEntityCollisions(Entity& entity) const;
 };
 
 #endif
