@@ -20,6 +20,7 @@ class EntityManager {
 		unsigned int GetEntityCount();
 		void ListAllEntities() const;
 		std::string CheckEntityCollisions(Entity& entity) const;
+		void setCollisionsVisibility(bool visibility);
 };
 
 #endif

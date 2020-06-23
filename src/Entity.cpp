@@ -4,10 +4,12 @@
 
 Entity::Entity(EntityManager& manager): manager(manager) {
 	this->isActive = true;
+	collisionVisibility = false;
 }
 
 Entity::Entity(EntityManager& manager, std::string name, LayerType layer): manager(manager), name(name), layer(layer) {
 	this->isActive = true;
+	collisionVisibility = false;
 }
 
 void Entity::Update(float deltaTime) {
@@ -42,4 +44,12 @@ std::string Entity::ToString() {
 		s += "	" + this->components[i]->typeName + "\n";
 	}
 	return s;
+}
+
+bool Entity::isCollisionVisible() const {
+	return collisionVisibility;
+}
+
+void Entity::setCollisionVisibility(bool visibility) {
+	collisionVisibility = visibility;
 }

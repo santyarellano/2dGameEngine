@@ -97,6 +97,13 @@ class SpriteComponent: public Component {
 
 		void Render() override {
 			TextureManager::Draw(texture, sourceRectangle, destinationRectangle, spriteFlip);
+			if (owner->isCollisionVisible()) {
+				SDL_Texture* collisionTexture = Game::assetManager->GetTexture("collider-image");
+				SDL_Rect collisionSourceRect;
+				collisionSourceRect = sourceRectangle;
+				collisionSourceRect.x = 0;
+				TextureManager::Draw(collisionTexture, collisionSourceRect, destinationRectangle, spriteFlip);
+			}
 		}
 };
 

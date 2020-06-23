@@ -15,6 +15,7 @@ class ColliderComponent: public Component {
 		SDL_Rect destinationRectangle;
 		TransformComponent* transform;
 
+
 		ColliderComponent(std::string colliderTag, int x, int y, int width, int height) {
 			this->colliderTag = colliderTag;
 			this->collider = {x, y, width, height};

@@ -77,3 +77,11 @@ std::string EntityManager::CheckEntityCollisions(Entity& myEntity) const {
 	}
 	return std::string();
 }
+
+void EntityManager::setCollisionsVisibility(bool visibility) {
+	for (auto& entity: entities) {
+		if (entity->HasComponent<ColliderComponent>()) {
+			entity->setCollisionVisibility(visibility);
+		}
+	}
+}

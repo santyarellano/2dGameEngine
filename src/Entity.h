@@ -17,6 +17,7 @@ class Entity {
 	private:
 		EntityManager& manager;
 		bool isActive;
+		bool collisionVisibility;
 		std::vector<Component*> components;
 		std::map<const std::type_info*, Component*> componentTypeMap;
 	public:
@@ -28,6 +29,8 @@ class Entity {
 		void Render();
 		void Destroy();
 		bool IsActive() const;
+		bool isCollisionVisible() const;
+		void setCollisionVisibility(bool visibility);
 		void ListAllComponents() const;
 		std::string ToString();
 

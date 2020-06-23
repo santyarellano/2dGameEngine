@@ -51,6 +51,9 @@ void Game::Initialize(int width, int height) {
 
 	LoadLevel(0);
 
+	// TODO: update keyboard control component to switch collision's visibility
+	manager.setCollisionsVisibility(true);
+
 	isRunning = true;
 	return;
 }
@@ -63,6 +66,7 @@ void Game::LoadLevel(int levelNumber) {
 	assetManager->AddTexture("chopper-image", std::string("./assets/images/chopper-spritesheet.png").c_str());
 	assetManager->AddTexture("radar-image", std::string("./assets/images/radar.png").c_str());
 	assetManager->AddTexture("jungle-tiletexture", std::string("./assets/tilemaps/jungle.png").c_str());
+	assetManager->AddTexture("collider-image", std::string("./assets/images/collision-texture.png").c_str());
 
 	map = new Map("jungle-tiletexture", 2, 32);
 	map->LoadMap("./assets/tilemaps/jungle.map", 25, 20);
