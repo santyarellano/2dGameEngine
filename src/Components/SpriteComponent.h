@@ -102,6 +102,7 @@ class SpriteComponent: public Component {
 				SDL_Rect collisionSourceRect;
 				collisionSourceRect = sourceRectangle;
 				collisionSourceRect.x = 0;
+				collisionSourceRect.y = 0;
 				TextureManager::Draw(collisionTexture, collisionSourceRect, destinationRectangle, spriteFlip);
 			}
 		}
