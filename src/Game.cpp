@@ -52,7 +52,7 @@ void Game::Initialize(int width, int height) {
 	LoadLevel(0);
 
 	// TODO: update keyboard control component to switch collision's visibility
-	manager.setCollisionsVisibility(true);
+	manager.setCollisionsVisibility(false);
 
 	isRunning = true;
 	return;
@@ -67,6 +67,7 @@ void Game::LoadLevel(int levelNumber) {
 	assetManager->AddTexture("radar-image", std::string("./assets/images/radar.png").c_str());
 	assetManager->AddTexture("jungle-tiletexture", std::string("./assets/tilemaps/jungle.png").c_str());
 	assetManager->AddTexture("collider-image", std::string("./assets/images/collision-texture.png").c_str());
+	assetManager->AddTexture("heliport-image", std::string("./assets/images/heliport.png").c_str());
 
 	map = new Map("jungle-tiletexture", 2, 32);
 	map->LoadMap("./assets/tilemaps/jungle.map", 25, 20);
@@ -78,9 +79,14 @@ void Game::LoadLevel(int levelNumber) {
 	player.AddComponent<ColliderComponent>("player", 240, 106, 32, 32);
 
 	Entity& tankEntity(manager.AddEntity("tank", ENEMY_LAYER));
-	tankEntity.AddComponent<TransformComponent>(0, 0, 20, 20, 32, 32, 1);
+	tankEntity.AddComponent<TransformComponent>(150, 495, 5, 0, 32, 32, 1);
 	tankEntity.AddComponent<SpriteComponent>("tank-image");
 	tankEntity.AddComponent<ColliderComponent>("enemy", 150, 495, 32, 32);
+
+	Entity& heliport(manager.AddEntity("Heliport", VEGETATION_LAYER));
+	heliport.AddComponent<TransformComponent>(470, 420, 0, 0, 32, 32, 1);
+	heliport.AddComponent<SpriteComponent>("heliport-image");
+	heliport.AddComponent<ColliderComponent>("LEVEL_COMPLETE", 470, 420, 32, 32);
 
 	Entity& radarEntity(manager.AddEntity("Radar", UI_LAYER));
 	radarEntity.AddComponent<TransformComponent>(720,15,0,0,64,64,1);
@@ -162,11 +168,23 @@ void Game::HandleCameraMovement() {
 }
 
 void Game::CheckCollisions() {
-	std::string collisionTagType = manager.CheckEntityCollisions(player);
-	if (collisionTagType.compare("enemy") == 0) {
-		// TODO: Do something when collision is identified with an enemy
-		isRunning = false;
+	CollisionType collisionType = manager.CheckCollisions();
+	if (collisionType == PLAYER_ENEMY_COLLISION) {
+		ProcessGameOver();
 	}
+	if (collisionType == PLAYER_LEVEL_COMPLETE_COLLISION) {
+		ProcessNextLevel(1);
+	}
+}
+
+void Game::ProcessGameOver() {
+	std::cout << "Game Over" << std::endl;
+	isRunning = false;
+}
+
+void Game::ProcessNextLevel(int levelNumber) {
+	std::cout << "Next Level" << std::endl;
+	isRunning = false;
 }
 
 void Game::Destroy() {
