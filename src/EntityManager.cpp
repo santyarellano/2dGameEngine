@@ -16,10 +16,17 @@ bool EntityManager::HasNoEntities() {
 }
 
 void EntityManager::Update(float deltaTime) {
-	for (auto& entity: entities) {
+	/*for (auto& entity: entities) {
 		entity->Update(deltaTime);
 	}
-	DestroyInactiveEntities();
+	DestroyInactiveEntities();*/
+	for (int i=0; i<(int)entities.size(); i++) {
+		entities[i]->Update(deltaTime);
+		if (!entities[i]->IsActive()) {
+			entities.erase(entities.begin() + i);
+		}
+	}
+
 }
 
 void EntityManager::DestroyInactiveEntities() {
