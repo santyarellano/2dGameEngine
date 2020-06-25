@@ -21,6 +21,7 @@ class EntityManager {
 		void ListAllEntities() const;
 		void setCollisionsVisibility(bool visibility);
 		CollisionType CheckCollisions();
+		void DestroyInactiveEntities();
 };
 
 #endif
