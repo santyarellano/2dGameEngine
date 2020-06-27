@@ -2,6 +2,11 @@
 -- Start the seed for the Lua math.random
 ----------------------------------------------------
 math.randomseed(os.time())
+hr= os.date("*t").hour
+mapTexture = "terrain-texture-day"
+if (hr < 9 or hr > 21) then
+	mapTexture = "terrain-texture-night"
+end
 
 Level1 = {
     ----------------------------------------------------
@@ -49,7 +54,7 @@ Level1 = {
     -- table to define the map config variables
     ----------------------------------------------------
     map = {
-        textureAssetId = "terrain-texture-day",
+        textureAssetId = mapTexture,
         file = "./assets/tilemaps/jungle.map",
         scale = 2,
         tileSize = 32,
