@@ -33,7 +33,7 @@ class KeyboardControlComponent: public Component {
             if (key.compare("down") == 0) return "1073741905";
             if (key.compare("left") == 0) return "1073741904";
             if (key.compare("right") == 0) return "1073741903";
-            if (key.compare("space") == 0) return "32"; 
+            if (key.compare("space") == 0) return "32";
             return std::to_string(static_cast<int>(key[0]));
         }
 
@@ -48,33 +48,33 @@ class KeyboardControlComponent: public Component {
                 if (keyCode.compare(upKey) == 0) {
                     transform->velocity.y = -40;
                     transform->velocity.x = 0;
-                    sprite->Play("UpAnimation"); 
+                    sprite->Play("UpAnimation");
                 }
                 if (keyCode.compare(rightKey) == 0) {
                     transform->velocity.y = 0;
                     transform->velocity.x = 40;
-                    sprite->Play("RightAnimation"); 
+                    sprite->Play("RightAnimation");
                 }
                 if (keyCode.compare(downKey) == 0) {
                     transform->velocity.y = 40;
                     transform->velocity.x = 0;
-                    sprite->Play("DownAnimation"); 
+                    sprite->Play("DownAnimation");
                 }
                 if (keyCode.compare(leftKey) == 0) {
                     transform->velocity.y = 0;
                     transform->velocity.x = -40;
-                    sprite->Play("LeftAnimation"); 
+                    sprite->Play("LeftAnimation");
                 }
                 if (keyCode.compare(shootKey) == 0) {
                     // TODO:
-                    // Shoot projectiles when 'shoot' key is pressed                    
+                    // Shoot projectiles when 'shoot' key is pressed
                 }
             }
 
             if (Game::event.type == SDL_KEYUP) {
                 std::string keyCode = std::to_string(Game::event.key.keysym.sym);
                 if (keyCode.compare(upKey) == 0) {
-                    transform->velocity.y = 0; 
+                    transform->velocity.y = 0;
                 }
                 if (keyCode.compare(rightKey) == 0) {
                     transform->velocity.x = 0;
@@ -85,7 +85,7 @@ class KeyboardControlComponent: public Component {
                 if (keyCode.compare(leftKey) == 0) {
                     transform->velocity.x = 0;
                 }
-            }           
+            }
         }
 };
 

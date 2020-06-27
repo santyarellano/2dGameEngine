@@ -23,7 +23,7 @@ class TransformComponent: public Component {
         }
 
         void Initialize() override {
-        
+
         }
 
         void Update(float deltaTime) override {
