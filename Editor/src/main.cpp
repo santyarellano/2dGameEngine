@@ -1,9 +1,19 @@
 #include <iostream>
+#include "./Constants.h"
+#include "./Editor.h"
 
-using namespace std;
+int main(int argc, char* args[]) {
+	Editor* editor = new Editor();
 
-int main() {
-	cout << "This will be my game engine editor..." << endl;
+	editor->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	
+	while (editor->IsRunning()) {
+		editor->ProcessInput();
+		editor->Update();
+		editor->Render();
+	}
+
+	editor->Destroy();
 
 	return 0;
 }
