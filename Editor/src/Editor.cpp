@@ -1,9 +1,13 @@
 #include <iostream>
 #include "./Editor.h"
 #include "./Constants.h"
+#include "./ElementManager.h"
+#include "./Elements/Bar.h"
 
+ElementManager manager;
 SDL_Renderer* Editor::renderer;
 SDL_Event Editor::event;
+Bar bar;
 
 Editor::Editor() {
 	this->isRunning = false;
@@ -41,6 +45,9 @@ void Editor::Initialize(int width, int height) {
 
 	isRunning = true;
 
+	// Init elements
+	bar = Bar();
+	
 	return;
 }
 
@@ -85,11 +92,17 @@ void Editor::Update() {
 
 	// Sets the new ticks for the current frame to be used in the next pass
 	ticksLastFrame = SDL_GetTicks();
+
+	// Update elements
+	bar.Update(deltaTime);
 }
 
 void Editor::Render() {
 	SDL_SetRenderDrawColor(renderer, 21, 21, 21, 255);
 	SDL_RenderClear(renderer);
+	
+	bar.Render();
+	manager.Render();
 
 	SDL_RenderPresent(renderer);
 }
