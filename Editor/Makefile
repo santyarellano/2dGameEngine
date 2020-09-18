@@ -1,7 +1,7 @@
 build:
 	g++ -w -std=c++14 -Wfatal-errors \
 	./src/*.cpp \
-	-o ../GameEngine \
+	-o ./Editor \
 	-I"./lib/lua" \
 	-L"./lib/lua" \
 	-llua \
@@ -11,7 +11,7 @@ build:
 	-lSDL2_mixer;
 
 clean:
-	rm ../GameEngine;
+	rm ./Editor;
 
 run:
-	../GameEngine;
+	./Editor;
