@@ -1,5 +1,0 @@
-ln -s ~/Dev/android/sdl2 ~/Dev/android/TestGame/app/jni/SDL
-ln -s ~/Dev/android/sdl2_image ~/Dev/android/TestGame/app/jni/SDL_image
-ln -s ~/Dev/android/sdl2_mixer ~/Dev/android/TestGame/app/jni/SDL_mixer
-ln -s ~/Dev/android/sdl2_net ~/Dev/android/TestGame/app/jni/SDL_net
-ln -s ~/Dev/android/sdl2_ttf ~/Dev/android/TestGame/app/jni/SDL_ttf
