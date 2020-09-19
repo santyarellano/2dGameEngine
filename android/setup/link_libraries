@@ -1,6 +1,6 @@
-cd TestGame/app/jni
+cd ../TestGame/app/jni
 rm SDL SDL_image SDL_mixer SDL_net SDL_ttf
-cd ../../../
+cd ../../../setup
 
 # Add your own path
 ln -s ~/Documents/Git/2dGameEngine/android/sdl2 ~/Documents/Git/2dGameEngine/android/TestGame/app/jni/SDL

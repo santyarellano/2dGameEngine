@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40c7636a-c0d5-4602-b733-062430433bef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/android.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/SDL" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/SDL" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/SDL_image" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/SDL_image" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/SDL_mixer" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/SDL_mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/SDL_net" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/SDL_net" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/SDL_ttf" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/SDL_ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Android.mk" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Android.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../action" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../setup/links" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
