@@ -3,7 +3,8 @@
 
 #include <map>
 #include <string>
-#include <SDL2/SDL_ttf.h>
+//#include "./SDL_ttf.h"
+#include "../SDL_ttf/SDL_ttf.h"
 #include "./TextureManager.h"
 #include "./FontManager.h"
 #include "./EntityManager.h"

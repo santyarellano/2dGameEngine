@@ -1,10 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SDL2/SDL.h>
+/*#include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include "../lib/lua/sol.hpp"
+#include <SDL2/SDL_ttf.h>*/
+#include "../SDL/include/SDL.h"
+#include "../SDL_image/SDL_image.h"
+#include "../SDL_ttf/SDL_ttf.h"
+#include "./lib/lua/sol.hpp"
 #include "./Entity.h"
 #include "./Component.h"
 #include "./EntityManager.h"

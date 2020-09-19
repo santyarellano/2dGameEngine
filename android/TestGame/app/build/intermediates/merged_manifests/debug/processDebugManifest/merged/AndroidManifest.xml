@@ -4,7 +4,7 @@
      com.gamemaker.game
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.libsdl.app"
+    package="com.ssamdev.games.testgame"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -19,7 +19,7 @@
     <!-- Touchscreen support -->
     <uses-feature
         android:name="android.hardware.touchscreen"
-        android:required="false" />
+        android:required="true" />
 
     <!-- Game controller support -->
     <uses-feature
@@ -55,6 +55,11 @@
 
     <!-- if you want to capture audio, uncomment this. -->
     <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+    <!-- Uncomment these 2 lines if you need networking -->
+    <!--
+<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    -->
     <!--
  Create a Java class extending SDLActivity and place it in a
          directory under app/src/main/java matching the package, e.g. app/src/main/java/com/gamemaker/game/MyGame.java
@@ -70,6 +75,7 @@
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:testOnly="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
 
         <!--
@@ -78,7 +84,7 @@
         -->
 
         <activity
-            android:name="org.libsdl.app.SDLActivity"
+            android:name="com.ssamdev.games.TestGame"
             android:alwaysRetainTaskState="true"
             android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:label="@string/app_name"
