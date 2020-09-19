@@ -1,1 +1,0 @@
-cp -r ../../src/* ../TestGame/app/jni/src/.
