@@ -14,6 +14,9 @@ Knowing this, let's see what the engine implements:
 - Component (modularity) structure.
 - Scripting for level creation (using Lua).
 
+Here's an image of what the engine can create:
+![Screenshot of the engine working](https://github.com/santyarellano/2dGameEngine/blob/master/image.png)
+
 **NOTES:**
 
 - I was creating an editor for this, yet I decided to build a new version of the engine which can run on mobile devices. You check the project using [this link](https://github.com/santyarellano/CrossEngine).
